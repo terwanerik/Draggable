@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Draggable</title>
+
+		<style>
+			body {
+				background: #f4f4f4;
+				color: #232323;
+
+				font-family: "Avenir Next", "Avenir", sans-serif;
+				font-size: 18px;
+				line-height: 26px;
+
+				text-align: center;
+			}
+
+			div.wrapper
+			{
+				display: inline-block;
+				width: 800px;
+				padding: 50px;
+			}
+
+			div[data-drag] {
+				display: inline-block;
+				width: 300px;
+				height: 60px;
+				margin: 10px 25px;
+
+				background: #fcfcfc;
+				color: #a7a7a7;
+				text-shadow: 1px 1px 0 #fff;
+				box-shadow: 0 2px 1px rgba(0,0,0,0.15);
+				border-radius: 5px;
+
+				font-size: 2em;
+				font-weight: lighter;
+				line-height: 60px;
+
+				cursor: default;
+				
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			div[data-drag][draggable] {
+				cursor: move;
+			}
+			
+			*[draggable] {
+				/* Needed for Safari, anything but static */
+				position: relative;
+				-khtml-user-drag: element;
+				-webkit-user-drag: element;
+			}
+
+			div[data-drag][aria-grabbed=true] {
+				box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+			}
+
+			div[data-drag][data-dragover] {
+				transform: scale(0.95,0.95);
+			}
+
+			div[data-drag].red {
+				background: tomato;
+				color: #fff;
+				text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+			}
+
+			div[data-drag].blue {
+				background: teal;
+				color: #fff;
+				text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+			}
+		</style>
+	</head>
+	<body>
+	<div class="wrapper">
+		<h1>Draggable</h1>
+		<p>Using the HTML5 draggable api should not be difficult. This makes it simple to swap elements by dragging.</p>
+
+		<div data-drag="odd" data-val="1" class="red">1</div>
+		<div data-drag="even" data-val="2">2</div>
+		<div data-drag="odd" data-val="3">3</div>
+		<div data-drag="even" data-val="4">4</div>
+		<div data-drag="odd" data-val="5">5</div>
+		<div data-drag="even" data-val="6">6</div>
+		<div data-drag="odd" data-val="7" class="blue">7</div>
+		<div data-drag="even" data-val="8">8</div>
+	</div>
+
+	<script src="js/manager/draggable.js" type="text/javascript"></script>
+	<script>
+		var all = document.querySelectorAll('[data-drag]');
+
+		var draggable = new Draggable(all);
+		draggable.listen(function(from, to){
+			console.log(from);
+			console.log(to);
+		});
+	</script>
+	</body>
+</html>
