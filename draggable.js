@@ -350,6 +350,28 @@
 				return _this;
 			};
 		}(this);
+		
+		/**
+		 * Listen to the drag finished event
+		 */
+		this.listen = function (_this) {
+			return function (callback) {
+				_this.callback = callback;
+			};
+		}(this);
+		
+		/**
+		 * Clears all the draggables
+		 */
+		this.clear = function (_this) {
+			return function () {
+				objects.forEach(function(obj){
+					obj.destroy();
+				});
+				
+				objects = [];
+			};
+		}(this);
 
 		function objectForHtmlElement(element) {
 			return objects.find(function(obj){
@@ -434,15 +456,6 @@
 						}
 					}
 				}
-			};
-		}(this);
-
-		/**
-		 * Listen to the drag finished event
-		 */
-		this.listen = function (_this) {
-			return function (callback) {
-				_this.callback = callback;
 			};
 		}(this);
 
