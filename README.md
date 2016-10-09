@@ -1,8 +1,8 @@
 # Draggable
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/terwanerik/Draggable/blob/master/LICENSE)
 [![Issues](https://img.shields.io/github/issues/terwanerik/Draggable.svg)](https://github.com/terwanerik/Draggable/issues)
-[![GitHub release](https://img.shields.io/github/release/terwanerik/Draggable.svg?maxAge=2592000)]()
-[![Bower](https://img.shields.io/bower/v/Draggable.svg?maxAge=2592000)]()
+[![GitHub release](https://img.shields.io/github/release/terwanerik/Draggable.svg?maxAge=2592000)](https://github.com/terwanerik/Draggable/releases)
+[![Bower](https://img.shields.io/bower/v/draggable-elements.svg?maxAge=2592000)](https://github.com/terwanerik/Draggable/)
 [![npm version](https://badge.fury.io/js/draggable-elements.svg)](https://www.npmjs.com/package/draggable-elements)
 [![Package Quality](http://npm.packagequality.com/shield/draggable-elements.svg)](http://packagequality.com/#?package=draggable-elements)
 
