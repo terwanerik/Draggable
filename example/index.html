@@ -50,11 +50,11 @@
 				transition: transform 0.3s ease, box-shadow 0.3s ease;
 			}
 
-			div[data-drag][draggable] {
+			div[data-drag][draggable=true] {
 				cursor: move;
 			}
 			
-			*[draggable] {
+			*[draggable=true] {
 				/* Needed for Safari, anything but static */
 				position: relative;
 				-khtml-user-drag: element;
@@ -86,22 +86,37 @@
 	<div class="wrapper">
 		<h1>Draggable</h1>
 		<p>Using the HTML5 draggable api should not be difficult. This makes it simple to swap elements by dragging.</p>
+		<p><button onclick="toggleDraggables()">Toggle draggables</button></p>
 
 		<div data-drag="odd" data-val="1" class="red">1</div>
 		<div data-drag="even" data-val="2">2</div>
 		<div data-drag="odd" data-val="3">3</div>
-		<div data-drag="even" data-val="4">4</div>
+		<div data-drag="even" data-val="4" class="blue">4</div>
 		<div data-drag="odd" data-val="5">5</div>
 		<div data-drag="even" data-val="6">6</div>
-		<div data-drag="odd" data-val="7" class="blue">7</div>
+		<div data-drag="odd" data-val="7">7</div>
 		<div data-drag="even" data-val="8">8</div>
 	</div>
 
-	<script src="draggable.js" type="text/javascript"></script>
+	<script src="../draggable.min.js" type="text/javascript"></script>
 	<script>
 		var all = document.querySelectorAll('[data-drag]');
-
-		var draggable = new Draggable(all);
+		var isDragging = false;
+		var draggable = new Draggable();
+		
+		function toggleDraggables()
+		{
+			if (!isDragging) {
+				draggable.add(all);
+				
+				isDragging = true;
+			} else {
+				draggable.clear();
+				
+				isDragging = false;
+			}
+		}
+		
 		draggable.listen(function(from, to){
 			console.log(from);
 			console.log(to);
