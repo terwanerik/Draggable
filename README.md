@@ -3,8 +3,8 @@
 [![Issues](https://img.shields.io/github/issues/terwanerik/Draggable.svg)](https://github.com/terwanerik/Draggable/issues)
 [![GitHub release](https://img.shields.io/github/release/terwanerik/Draggable.svg?maxAge=2592000)]()
 [![Bower](https://img.shields.io/bower/v/Draggable.svg?maxAge=2592000)]()
-[![npm version](https://badge.fury.io/js/draggable.svg)](https://www.npmjs.com/package/draggable)
-[![Package Quality](http://npm.packagequality.com/shield/draggable.svg)](http://packagequality.com/#?package=draggable)
+[![npm version](https://badge.fury.io/js/draggable-elements.svg)](https://www.npmjs.com/package/draggable-elements)
+[![Package Quality](http://npm.packagequality.com/shield/draggable-elements.svg)](http://packagequality.com/#?package=draggable-elements)
 
 Using the HTML5 draggable api should not be difficult. This makes it simple to swap elements by dragging.
 

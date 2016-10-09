@@ -1,5 +1,5 @@
 {
-  "name": "draggable",
+  "name": "draggable-elements",
   "version": "0.1.0",
   "description": "Using the HTML5 draggable api should not be difficult. This makes it simple to swap elements by dragging.",
   "main": "draggable.min.js",
