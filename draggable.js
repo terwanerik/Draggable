@@ -383,8 +383,8 @@
 
 		var dragStartHandle = function (_this) {
 			return function (e) {
-				//e.dataTransfer.effectAllowed = 'move';
-				//e.dataTransfer.setData('text/html', this.innerHTML);
+				e.dataTransfer.effectAllowed = 'move';
+				e.dataTransfer.setData('text/html', this.innerHTML);
 
 				currentDrag = objectForHtmlElement(this);
 				currentDrag.dragStarted();
